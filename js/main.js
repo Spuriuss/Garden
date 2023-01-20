@@ -28,31 +28,33 @@ $('.plantButton').click(function() {
 
 
 $('body').on('click', '.tree', function() {
-	$(this).attr('data-state', 'harvested');
-	$(this).find('.fruits').fadeOut(0);
-	
-	var thisTreeId = $(this).attr('data-id');
-	var thisTreeType = $(this).attr('data-treeType');
-	
-	if (thisTreeType == 'Apple') {
-		var numberOfHarvestedFruits = 40 + Math.floor(Math.random() * 11);
-	}
-	if (thisTreeType == 'Pear') {
-		var numberOfHarvestedFruits = Math.floor(Math.random() * 21);
-	}
-	
-	var currentNumberOfFruits = parseInt($('#numberOf' + thisTreeType + 's').find('.value').text());
-	var newNumberOfFruits = currentNumberOfFruits + numberOfHarvestedFruits;
-	$('#numberOf' + thisTreeType + 's').find('.value').text(newNumberOfFruits);
-
-	$.ajax({
-		type: "POST",
-		url: "handlers/harvest.php",
-		data: 'treeId=' + thisTreeId + '&' + 'treeType=' + thisTreeType + '&' + 'numberOfFruits=' + newNumberOfFruits,
-		success: function(data) {
-			//alert(data);
+	if ($(this).attr('data-state') == 'ripe') {
+		$(this).attr('data-state', 'harvested');
+		$(this).find('.fruits').fadeOut(0);
+		
+		var thisTreeId = $(this).attr('data-id');
+		var thisTreeType = $(this).attr('data-treeType');
+		
+		if (thisTreeType == 'Apple') {
+			var numberOfHarvestedFruits = 40 + Math.floor(Math.random() * 11);
 		}
-	});
+		if (thisTreeType == 'Pear') {
+			var numberOfHarvestedFruits = Math.floor(Math.random() * 21);
+		}
+		
+		var currentNumberOfFruits = parseInt($('#numberOf' + thisTreeType + 's').find('.value').text());
+		var newNumberOfFruits = currentNumberOfFruits + numberOfHarvestedFruits;
+		$('#numberOf' + thisTreeType + 's').find('.value').text(newNumberOfFruits);
+
+		$.ajax({
+			type: "POST",
+			url: "handlers/harvest.php",
+			data: 'treeId=' + thisTreeId + '&' + 'treeType=' + thisTreeType + '&' + 'numberOfFruits=' + newNumberOfFruits,
+			success: function(data) {
+				//alert(data);
+			}
+		});
+	}
 });
 
 
