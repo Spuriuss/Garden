@@ -1,0 +1,10 @@
+@font-face {
+font-family: asd;
+src: url("../fonts/asd.woff");
+}
+
+
+@keyframes leafOne {
+	0% {top: 0%;}
+	100% {top: 100%;}
+}
