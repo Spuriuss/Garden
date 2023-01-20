@@ -13,67 +13,11 @@ $db_host = 'localhost';
 $connection->set_charset("utf8");
 
 
-
 $request = "UPDATE john_trees SET treeStatus='harvested' WHERE id='$treeId'";
 mysqli_query($connection, $request) or die(mysqli_error($connection));
 
 
-
 $fruitColumnName = strtolower($treeType) . 's';
-
 $request = "UPDATE farmers SET $fruitColumnName='$numberOfFruits' WHERE name='John'";
 mysqli_query($connection, $request) or die(mysqli_error($connection));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

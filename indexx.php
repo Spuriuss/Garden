@@ -1,53 +1,13 @@
 <html>
 <head>
 <link rel='icon' type='image/x-icon' href='images/favicon.ico'>
+<title>Оборотный сад</title>
 
 <script type='text/javascript' src='js/extensions/jquery-3.4.1.js'></script>
 <script type='text/javascript' src='js/extensions/jquery.cookie.js'></script>
 
 <link rel=stylesheet type=text/css href=<?php echo "'css/main.css?version=", rand(), "'"; ?> />
-<!--
 
-	$db_host = 'localhost';
-	$db_user = 'root';
-	$db_password = '';
-	$db_name = 'xxx';
-	$connection = mysqli_connect($db_host, $db_user, $db_password, $db_name);
-$connection->set_charset("utf8");	
-
-	SELECT xxx FROM xxx WHERE xxx='xxx'
-
-	UPDATE Customers SET ContactName='Juan' WHERE Country='Mexico';
-
-	INSERT INTO Customers (a, b) VALUES ('c', 'd');
-
-	"DELETE FROM `table` WHERE `n` = 11"
-	
-	$request = "";
-	$response = mysqli_query($connection, $request) or die(mysqli_error($connection));
-	while ($b = mysqli_fetch_assoc($response)) {$xxx[] = $b;}
-
--->
-<script>
-/*
-	$.ajax({
-		type: "POST",
-		url: 'asd.php',
-		data: "asd=" + asd + '&' + 'asd=' + asd,
-		success: function(data) {alert(data);}
-	});
-	
-	$('#mainOne').on('click', '.changeQuestionButton', function() {
-*/
-$(document).ready(function(){
-	
-})
-</script>
-</head>
-
-
-
-<body>
 <?php
 $db_host = 'localhost';
 	$db_user = 'root';
@@ -65,7 +25,11 @@ $response = mysqli_query($connection, $request) or die(mysqli_error($connection)
 $treesCounter = 0;
 while ($b = mysqli_fetch_assoc($response)) {$allTrees[] = $b; $treesCounter++;}
 ?>
+</head>
 
+
+
+<body>
 
 <div id=top>
 	<div id=left>
@@ -142,19 +106,6 @@ while ($b = mysqli_fetch_assoc($response)) {$allTrees[] = $b; $treesCounter++;}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div id=garden>
 <?php
 	for ($i = 0; $i < $treesCounter; $i++) {
@@ -167,24 +118,6 @@ while ($b = mysqli_fetch_assoc($response)) {$allTrees[] = $b; $treesCounter++;}
 
 ?>	
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 

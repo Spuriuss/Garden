@@ -9,23 +9,14 @@ $db_host = 'localhost';
 $connection->set_charset("utf8");	
 
 
-
-
 $request = "SELECT * FROM john_trees";
 $response = mysqli_query($connection, $request) or die(mysqli_error($connection));
 
 $treesCounter = 0;
 while ($b = mysqli_fetch_assoc($response)) {$allTrees[] = $b; $treesCounter++;}
 
-//echo "<pre>";
-//var_dump($allTrees);
-//echo '</pre>';
 
 for ($i = 0; $i < $treesCounter; $i++) {
-	
-	//echo date('Y-M-D h:i:s', time()), '//////////', $allTrees[$i]['lastHarvested'], '<br>';
-
-	
 	if ((time() - strtotime($allTrees[$i]['lastHarvested'])) > 30 && $allTrees[$i]['treeStatus'] == 'harvested') {
 		$thisTreeid = $allTrees[$i]['id'];
 		$request = "UPDATE john_trees SET treeStatus='ripe' WHERE id='$thisTreeid'";
@@ -34,6 +25,4 @@ for ($i = 0; $i < $treesCounter; $i++) {
 		echo $thisTreeid, '_';
 	}
 }
-
-
 ?>

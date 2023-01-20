@@ -12,7 +12,6 @@ $db_host = 'localhost';
 $connection->set_charset("utf8");
 
 
-
 $request = "INSERT INTO john_trees (treeType, treeStatus) VALUES ('$treeType', 'harvested')";
 mysqli_query($connection, $request) or die(mysqli_error($connection));
 
@@ -21,19 +20,9 @@ $request = "UPDATE farmers SET $treeColumnName='$currentTreeAmount', fertilizer=
 mysqli_query($connection, $request) or die(mysqli_error($connection));
 
 
-
-
-
-
-
-
-
 $request = "SELECT id FROM john_trees";
 $response = mysqli_query($connection, $request) or die(mysqli_error($connection));
 $treesCounter = 0;
 while ($b = mysqli_fetch_assoc($response)) {$allTrees[] = $b; $treesCounter++;}
-
-
-
 echo $allTrees[$treesCounter-1]['id'];
 ?>

@@ -5,13 +5,50 @@ body {
 	position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); white-space: nowrap;
 }
 
-div {
-	border: px solid black;
-}
 
-.value {
-	display: inline-block;
+#top {
+	height: 200px;
 }
+	#left {
+		position: absolute; left: 30px; top: 30px;
+	}
+		#left > div {
+			display: inline-block;
+		}
+		
+		.plantButton {
+			cursor: pointer; user-select: none;
+			color: white;
+			border-radius: 15px;
+			width: 140px; height: 35px;
+			position: relative; vertical-align: top;
+			margin-top: 10px;
+		}
+		
+	#right {
+		position: absolute; right: 30px; top: 30px;
+		width: 200px;
+		border: px solid black;
+	}
+		#right > div {
+			display: inline-block;
+		}
+		
+		
+		#sellFruitsButton {
+			cursor: pointer; user-select: none;
+			color: white;
+			border-radius: 15px;
+			width: 160px; height: 35px;
+			position: relative; vertical-align: top; left: 50%; transform: translate(-50%,0);
+			margin-top: 10px; margin-bottom: 20px;
+			background: green;
+		}
+	.value {
+		display: inline-block;
+	}
+
+
 
 #garden {
 	width: 1200px; max-width: 90%;
@@ -40,45 +77,3 @@ div {
 		}
 		
 		
-#top {
-	height: 200px;
-}
-	#left {
-		position: absolute; left: 30px; top: 30px;
-	}
-		#left > div {
-			display: inline-block;
-		}
-		
-		.plantButton {
-			cursor: pointer; user-select: none;
-			color: white;
-			border-radius: 15px;
-			width: 140px; height: 35px;
-			position: relative; vertical-align: top;
-			margin-top: 10px;
-		}
-		
-		
-		
-		
-		
-	#right {
-		position: absolute; right: 30px; top: 30px;
-		width: 200px;
-		border: px solid black;
-	}
-		#right > div {
-			display: inline-block;
-		}
-		
-		
-		#sellFruitsButton {
-			cursor: pointer; user-select: none;
-			color: white;
-			border-radius: 15px;
-			width: 160px; height: 35px;
-			position: relative; vertical-align: top; left: 50%; transform: translate(-50%,0);
-			margin-top: 10px; margin-bottom: 20px;
-			background: green;
-		}
